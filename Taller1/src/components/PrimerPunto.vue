@@ -3,7 +3,7 @@
     <input type="number" placeholder="Ingrese una hora en segundos" v-model="sec"/>
     {{sec}}
     <button @click="Calculo">Calular</button>
-    <p>{{Math.trunc(hora)}}h:{{Math.trunc(min)}}m:{{Math.trunc(sobrante)}}s</p>
+    <p>{{respuesta}}</p>
 </template>
 
 <script>
@@ -15,7 +15,8 @@
                 min:"",
                 hora:"",
                 sobrante:"",
-                resultado:""
+                resultado:"",
+                respuesta:''
             }
         },
         methods:{
@@ -24,6 +25,7 @@
                 this.sobrante=this.sec%3600
                 this.min=this.sobrante/60
                 this.sobrante=this.sobrante%60
+                this.respuesta=Math.trunc(this.hora)+'h:'+Math.trunc(this.min)+'m:'+Math.trunc(this.sobrante)+'s'
             }
         }
     }

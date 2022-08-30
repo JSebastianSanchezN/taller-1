@@ -12,13 +12,14 @@
             return{
                 sueldo:'',
                 numero:2,
-                texto:'Ingrese el sueldo',
+                texto:'Ingrese el sueldo y luego de enter',
                 fin:'',
                 items:[]
             }
         },
         methods:{
             siguiente(){
+                this.fin=''
                 this.texto='Ingrese el sueldo Nro '+this.numero  
                 this.numero = this.numero+1
                 this.items.push(this.sueldo)
@@ -36,6 +37,7 @@
                         }else{
                             this.fin=(this.items[i]*0.08)+this.items[i]
                             this.items.splice(i,1,this.fin)
+                            this.fin=''
                         }
                     }
                 }else{
@@ -43,7 +45,7 @@
                     this.items.length=0;
                     this.numero=1
                     this.texto='Ingrese el sueldo Nro '+this.numero
-                    this.numero = this.numero+1  
+                    this.numero = this.numero+1
                 }
             }
         }
@@ -52,7 +54,7 @@
 
 <style scoped>
 input{
-    width: 200px;
+    width: 300px;
     
 }
 </style>

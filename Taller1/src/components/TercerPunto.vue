@@ -16,9 +16,6 @@
                 resultado:""
             }
         },
-        methods:{
-            
-        },
         computed:{
             momento(){
                 if ((this.hora.substring(6,8))=='am'){

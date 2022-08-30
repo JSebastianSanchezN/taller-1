@@ -1,13 +1,13 @@
 <template>
-  <PrimerPunto/>
+  <OctavoPunto/>
 </template>
 
 <script>
-import PrimerPunto from './components/PrimerPunto.vue';
+import OctavoPunto from './components/OctavoPunto.vue';
   export default{
     name: 'App',
     components: {
-    PrimerPunto
+      OctavoPunto
 }
   }
 </script>

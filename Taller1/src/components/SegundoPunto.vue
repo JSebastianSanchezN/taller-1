@@ -10,7 +10,7 @@
     {{duracion}}
     <br />
     <button @click="Calculo">Calular</button>
-    <p>{{coste}} pesos</p>
+    <p>{{respuesta}}</p>
 </template>
 
 <script>
@@ -22,7 +22,8 @@
                 duracion:"",
                 min:"",
                 resultado:"",
-                coste:""
+                coste:"",
+                respuesta:''
             }
         },
         methods:{
@@ -45,6 +46,7 @@
                         this.coste=100+this.resultado
                     }
                 }
+                this.respuesta=this.coste+' pesos'
             }
         }
     }

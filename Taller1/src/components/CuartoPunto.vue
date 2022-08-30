@@ -4,7 +4,7 @@
     <input type="number" placeholder="Ingrese el segundo numero a comparar" v-model="segundo"/><br/>
     <input type="number" placeholder="Ingrese el tercer numero a comparar" v-model="tercero"/><br/>
     <button @click="comparar">Comparar</button>
-    <p>La cantidad de numeros iguales es de {{resultado}}</p>
+    <p id="para">La cantidad de numeros iguales es de {{resultado}}</p>
 </template>
 
 <script>
@@ -26,6 +26,7 @@
                 }else if(this.primero==this.segundo||this.segundo==this.tercero||this.primero==this.tercero){
                     this.resultado=2
                 }
+                para.style.visibility = "visible";
             }
         }
     }
@@ -34,5 +35,8 @@
 <style scoped>
 input{
     width: 250px;
+}
+#para{
+    visibility:hidden;
 }
 </style>
