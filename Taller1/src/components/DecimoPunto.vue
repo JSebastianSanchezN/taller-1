@@ -12,6 +12,11 @@
                 </td>
             </tr>
         </thead>
+        <tfoot>
+            <td v-for="i in columnas">
+                {{suma[i-1]}}
+            </td>
+        </tfoot>
     </table>
     
 </template>
@@ -24,7 +29,7 @@
                 filas:'',
                 columnas:'',
                 numero:0,
-                suma:0,
+                suma:[],
                 items:[[]]
             }
         },
@@ -37,6 +42,14 @@
                         this.items[i][j]=parseInt((Math.random())*10);
                     }
                 }
+                var sum=0
+                for (var i=0;i<this.columnas;i++){
+                    sum=0
+                    for (var j=0;j<this.filas;j++){
+                        sum=sum+this.items[j][i]
+                    }
+                    this.suma[i]=sum
+                }
             }
         }
     }
@@ -45,6 +58,5 @@
 <style scoped>
 input{
     width: 210px;
-    
 }
 </style>
