@@ -1,13 +1,13 @@
 <template>
-  <OctavoPunto/>
+  <DecimoPunto/>
 </template>
 
 <script>
-import OctavoPunto from './components/OctavoPunto.vue';
+import DecimoPunto from './components/DecimoPunto.vue';
   export default{
     name: 'App',
     components: {
-      OctavoPunto
+      DecimoPunto
 }
   }
 </script>

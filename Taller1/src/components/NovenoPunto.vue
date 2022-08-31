@@ -4,6 +4,15 @@
     <input type="number" placeholder="Ingrese el numero de filas" v-model="filas"/><br/>
     <button @click="matriz">Crear tabla</button>
     <p>{{items.toString()}}</p>
+    <table border>
+        <thead>
+            <tr v-for="i in items.length">
+                <td v-for="j in items[i-1]?.length">
+                    {{i}}, {{j}}
+                </td>
+            </tr>
+        </thead>
+    </table>
 </template>
 
 <script>
@@ -26,30 +35,6 @@
                         this.items[i][j]=parseInt((Math.random())*10);
                     }
                 }
-                document.writeln('<table border>')
-                document.writeln('<thead>')
-                for (i=0;i<this.columnas+1;i++){
-                    document.writeln("<th>")
-                    document.writeln(this.numero)
-                    this.numero=this.numero+1
-                    document.writeln("</th>")
-                }
-                document.writeln('</thead>')
-                this.numero=1
-                for (i=0;i<this.filas;i++){
-                    document.writeln("<tr>")
-                    document.writeln("<th>")
-                    document.writeln(this.numero)
-                    this.numero=this.numero+1
-                    document.writeln("</th>")
-                    for (j=0;j<this.columnas;j++){
-                        document.writeln("<td>")
-                        document.writeln(this.items[j][i])
-                        document.writeln("</td>")
-                    }
-                    document.writeln("</tr>")
-                }
-                document.writeln("</table>")
             }
         }
     }
