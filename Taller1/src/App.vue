@@ -1,13 +1,13 @@
 <template>
-  <DecimoPunto/>
+  <Challenge6 title="Counter 1"/>
 </template>
 
 <script>
-import DecimoPunto from './components/DecimoPunto.vue';
+import Challenge6 from './components/Challenge6.vue';
   export default{
     name: 'App',
     components: {
-      DecimoPunto
+      Challenge6
 }
   }
 </script>
